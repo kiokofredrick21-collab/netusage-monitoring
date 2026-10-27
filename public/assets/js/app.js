@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{const toast=document.querySelector('.toast');if(toast)setTimeout(()=>toast.remove(),4500);document.querySelectorAll('input[type=number]').forEach(i=>i.addEventListener('input',()=>{if(Number(i.value)<0)i.value=0;}));});

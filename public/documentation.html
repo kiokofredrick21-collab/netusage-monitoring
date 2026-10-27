@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NetUsage Hub - System Documentation | Zetech University</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Tinos:ital,wght@0,400;0,700;1,400&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Mermaid.js for Rendering Logic Diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
+        });
+    </script>
+    <style>
+        :root {
+            --primary-navy: #002b49;
+            --accent-blue: #0d6efd;
+            --text-main: #1f2937;
+            --page-bg: #e5e7eb;
+        }
+        body {
+            background-color: var(--page-bg);
+            color: var(--text-main);
+            font-family: 'Tinos', 'Times New Roman', Georgia, serif;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .doc-toolbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #ffffff;
+            border-bottom: 2px solid #d1d5db;
+            padding: 12px 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .doc-paper {
+            max-width: 900px;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 70px 80px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+            border-radius: 4px;
+        }
+        .cover-page {
+            text-align: center;
+            min-height: 900px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 40px 0;
+        }
+        .univ-logo-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: var(--primary-navy);
+            color: #ffffff;
+            font-size: 38px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin-bottom: 12px;
+        }
+        .univ-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--primary-navy);
+            font-size: 26px;
+            margin-bottom: 4px;
+        }
+        .univ-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            letter-spacing: 1px;
+            color: #4b5563;
+            text-transform: uppercase;
+        }
+        .doc-title-box {
+            margin: 60px 0;
+        }
+        .project-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: #111827;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+        }
+        .project-sub {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: #4b5563;
+            margin-top: 10px;
+            letter-spacing: 1.5px;
+        }
+        .chapter-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 20px;
+            border-bottom: 2px solid var(--primary-navy);
+            padding-bottom: 6px;
+            margin-top: 45px;
+            margin-bottom: 20px;
+            color: var(--primary-navy);
+        }
+        .sub-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            color: #1f2937;
+        }
+        table.academic-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        table.academic-table th, table.academic-table td {
+            border: 1px solid #d1d5db;
+            padding: 10px 14px;
+        }
+        table.academic-table th {
+            background-color: #f3f4f6;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+        .figure-box {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        .figure-caption {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: #4b5563;
+            margin-top: 10px;
+            text-align: center;
+        }
+        pre.code-snippet {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 16px;
+            border-radius: 6px;
+            font-family: 'Fira Code', Consolas, monospace;
+            font-size: 12.5px;
+            text-align: left;
+            overflow-x: auto;
+            line-height: 1.45;
+        }
+        .page-break {
+            page-break-after: always;
+            border-top: 1px dashed #9ca3af;
+            margin: 50px 0;
+        }
+        @media print {
+            body { background: #fff; }
+            .doc-toolbar { display: none !important; }
+            .doc-paper { box-shadow: none; margin: 0; padding: 0; max-width: 100%; }
+            .page-break { page-break-after: always; border: none; margin: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="doc-toolbar d-print-none">
+    <div class="d-flex align-items-center gap-2">
+        <span class="badge bg-primary px-3 py-2 fs-6">Zetech University System Documentation</span>
+        <span class="text-muted small">NetUsage Hub (Network Usage Monitoring System)</span>
+    </div>
+    <div class="d-flex gap-2">
+        <a href="NETWORK_USAGE_MONITORING_SYSTEM_DOCUMENTATION.docx" download class="btn btn-success btn-sm">
+            <i class="fa fa-file-word-o me-1"></i> Download Word (.docx)
+        </a>
+        <a href="dashboard.php" class="btn btn-outline-secondary btn-sm">
+            <i class="fa fa-dashboard me-1"></i> Open Live System
+        </a>
+        <button onclick="window.print()" class="btn btn-primary btn-sm">
+            <i class="fa fa-print me-1"></i> Print / Save as PDF
+        </button>
+    </div>
+</div>
+
+<div class="doc-paper">
+
+    <!-- COVER PAGE -->
+    <div class="cover-page">
+        <div>
+            <div class="univ-logo-badge">Z</div>
+            <div class="univ-title">ZETECH UNIVERSITY</div>
+            <div class="univ-tagline">Inventing the Future</div>
+            <p class="text-muted small mt-2">FACULTY OF ICT · DEPARTMENT OF COMPUTER SCIENCE</p>
+        </div>
+
+        <div class="doc-title-box">
+            <h1 class="project-title">NETWORK USAGE MONITORING SYSTEM<br>(NETUSAGE HUB)</h1>
+            <div class="project-sub">SYSTEM DOCUMENTATION</div>
+        </div>
+
+        <div>
+            <p class="mb-1"><strong>SUBMITTED BY:</strong></p>
+            <p class="mb-4">
+                <strong>Student Name:</strong> Brenda Chebet Chelule<br>
+                <strong>Registration Number:</strong> DCS-01-0892/2024
+            </p>
+            <p class="small text-muted" style="max-width: 550px; margin: 0 auto;">
+                A SYSTEM DOCUMENTATION SUBMITTED IN PARTIAL FULFILMENT FOR THE AWARD OF DIPLOMA IN COMPUTER SCIENCE BY ZETECH UNIVERSITY
+            </p>
+            <p class="mt-4 fw-bold">AUGUST 2026</p>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PRELIMINARY: DECLARATION -->
+    <h2 class="chapter-heading text-center">DECLARATION</h2>
+    <p>I, <strong>Brenda Chebet Chelule</strong>, do hereby declare that this project documentation titled <em>"Network Usage Monitoring System (NetUsage Hub)"</em> is my original work and has never been submitted anywhere for any degree, diploma, or academic award.</p>
+    
+    <div class="row mt-5">
+        <div class="col-6">
+            <p><strong>Student Name:</strong> Brenda Chebet Chelule</p>
+            <p><strong>Signature:</strong> _________________________</p>
+            <p><strong>Date:</strong> _____________________________</p>
+        </div>
+        <div class="col-6">
+            <p><strong>Supervisor Name:</strong> ____________________</p>
+            <p><strong>Signature:</strong> _________________________</p>
+            <p><strong>Date:</strong> _____________________________</p>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PRELIMINARY: DEDICATION -->
+    <h2 class="chapter-heading text-center">DEDICATION</h2>
+    <p>This project is dedicated to my family for their constant support, encouragement, and understanding throughout my academic journey. Their motivation and belief in my abilities gave me the strength to complete this project successfully.</p>
+    <p>Also, this project is dedicated to all students and innovators pursuing knowledge in Computer Science and Network Infrastructure Engineering.</p>
+
+    <div class="page-break"></div>
+
+    <!-- PRELIMINARY: ABSTRACT -->
+    <h2 class="chapter-heading text-center">ABSTRACT</h2>
+    <p>This project focuses on the design, development, and implementation of the <strong>NetUsage Hub Network Usage Monitoring System</strong> to resolve critical inefficiencies in monitoring and managing network infrastructure. In many small and medium-sized organizations, network auditing and bandwidth tracking are still handled through fragmented spreadsheets or reactive manual checks, leading to unmonitored bandwidth overconsumption, unrecognized downtime, and lack of historical network audits.</p>
+    <p>The developed system provides a secure, centralized web-based portal that allows network administrators to manage hardware device inventories (routers, switches, firewalls, and access points), record bandwidth consumption metrics in real-time, generate automated threshold-based alerts when download/upload capacities are breached, and review historical usage patterns through consolidated business reports.</p>
+    <p>The system was developed utilizing <strong>PHP 8</strong> and <strong>MySQL</strong> for the back-end logic and persistent relational storage, with <strong>HTML5, CSS3, JavaScript, and Bootstrap 5</strong> delivering a responsive, template-driven front-end interface. The system significantly enhances network visibility, prevents unexpected bandwidth costs, and enables evidence-based capacity planning.</p>
+
+    <div class="page-break"></div>
+
+    <!-- PRELIMINARY: KEY TERMS & ABBREVIATIONS -->
+    <h2 class="chapter-heading">DEFINITION OF KEY TERMS</h2>
+    <ul>
+        <li><strong>Network Monitoring System:</strong> A computerized platform used to track, audit, and evaluate the performance, status, and bandwidth consumption of networked hardware devices.</li>
+        <li><strong>Relational Database:</strong> An organized collection of persistent data structured into normalized tables accessed via Structured Query Language (SQL).</li>
+        <li><strong>User Authentication:</strong> A security process verifying user identity via credentials (username and hashed password) before granting administrative session privileges.</li>
+        <li><strong>Dashboard:</strong> A centralized graphical user interface displaying real-time Key Performance Indicators (KPIs) such as total monitored devices, active threshold alerts, and today's total bandwidth traffic.</li>
+        <li><strong>Threshold Alert:</strong> An automated system notification triggered when actual bandwidth utilization or packet loss exceeds a predefined capacity limit.</li>
+    </ul>
+
+    <h2 class="chapter-heading">ABBREVIATIONS AND ACRONYMS</h2>
+    <p><strong>API:</strong> Application Programming Interface &nbsp;|&nbsp; <strong>CRUD:</strong> Create, Read, Update, Delete<br>
+    <strong>DFD:</strong> Data Flow Diagram &nbsp;|&nbsp; <strong>ERD:</strong> Entity Relationship Diagram<br>
+    <strong>IP:</strong> Internet Protocol &nbsp;|&nbsp; <strong>ISP:</strong> Internet Service Provider<br>
+    <strong>LAN:</strong> Local Area Network &nbsp;|&nbsp; <strong>MB:</strong> Megabyte<br>
+    <strong>NOC:</strong> Network Operations Center &nbsp;|&nbsp; <strong>PDO:</strong> PHP Data Objects<br>
+    <strong>PHP:</strong> Hypertext Preprocessor &nbsp;|&nbsp; <strong>SQL:</strong> Structured Query Language</p>
+
+    <div class="page-break"></div>
+
+    <!-- CHAPTER ONE -->
+    <h2 class="chapter-heading">CHAPTER ONE: PROJECT PLANNING AND ANALYSIS</h2>
+    
+    <h3 class="sub-heading">1.1 Statement of Problem</h3>
+    <p>Despite the rapid modernization of information and communication infrastructure, many small and medium-sized organizations continue to manage their network operations using manual methods, such as physical logbooks, isolated router web interfaces, and fragmented spreadsheets. These decentralized methods create acute operational bottlenecks, including unmonitored bandwidth consumption, unexpected ISP bill overruns, unrecognized equipment downtime, and complete absence of historical audit trails (Laudon & Laudon, 2022).</p>
+    <p>In the specific operational context of <strong>NetUsage Hub in Kisii</strong>, the lack of a centralized network usage monitoring portal has caused severe inefficiencies. Device health, bandwidth quotas, and link performance are reviewed ad-hoc after network degradation or outages have already disrupted business operations. Furthermore, bandwidth allocation decisions and ISP contract renewals are executed based on guesswork rather than empirical consumption data. There is, therefore, a pressing need to design and develop a centralized, secure web-based internal management portal that automates device inventory management, logs real-time bandwidth metrics, triggers automated threshold alerts, and delivers actionable business reports.</p>
+
+    <h3 class="sub-heading">1.2 Study Justification</h3>
+    <p>The development of this project is justified by the critical need for digital transformation within local network operations centers and enterprise IT environments. Independent service hubs and small enterprises require reliable digital tools to maintain network uptime and prevent financial losses stemming from bandwidth wastage and undetected hardware outages (Rashid et al., 2025). From a management perspective, this system eliminates manual record-keeping and uncoordinated equipment audits by providing a unified portal for device status tracking, automated threshold evaluation, and data-driven bandwidth forecasting.</p>
+
+    <h3 class="sub-heading">1.3 System Objectives</h3>
+    <p><strong>General Objective:</strong> To design, develop, and deploy a secure, web-based Network Usage Monitoring System (NetUsage Hub) for centralized network device tracking, metric logging, and threshold alert automation.</p>
+    <p><strong>Specific Objectives:</strong></p>
+    <ol>
+        <li>To develop a secure user authentication module utilizing session tokens and password hashing.</li>
+        <li>To develop an inventory control center for registering, editing, categorizing, and deleting network devices and threshold limits.</li>
+        <li>To develop an automated metric logging engine that captures download volume, upload volume, latency, and packet loss in real-time.</li>
+        <li>To implement an automated threshold monitoring mechanism that triggers alerts whenever monitored devices exceed configured bandwidth quotas.</li>
+        <li>To develop a search and filtering module enabling rapid retrieval of device details and logs.</li>
+        <li>To design an analytical reporting and export module that calculates aggregate bandwidth consumption and exports audit records to CSV.</li>
+    </ol>
+
+    <h3 class="sub-heading">1.4 Functional Requirements</h3>
+    <table class="academic-table">
+        <thead>
+            <tr>
+                <th>User Role</th>
+                <th>User Activities</th>
+                <th>System Features</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="6"><strong>Network Administrator</strong></td>
+                <td>Sign up, log in, and terminate session</td>
+                <td>Authentication module with password hashing & session control</td>
+            </tr>
+            <tr>
+                <td>Add, update, view, and decommission hardware devices</td>
+                <td>Device inventory management module (CRUD)</td>
+            </tr>
+            <tr>
+                <td>Monitor real-time network health and traffic</td>
+                <td>Dashboard overview with real-time KPI summary cards</td>
+            </tr>
+            <tr>
+                <td>Record telemetry readings or receive API data</td>
+                <td>Real-time metric transaction logger & JSON endpoint</td>
+            </tr>
+            <tr>
+                <td>Receive and resolve bandwidth threshold alerts</td>
+                <td>Automated threshold engine & active alert resolution center</td>
+            </tr>
+            <tr>
+                <td>Filter and export usage audit trails</td>
+                <td>Business usage reports with date filtering & CSV export</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="page-break"></div>
+
+    <!-- CHAPTER TWO -->
+    <h2 class="chapter-heading">CHAPTER TWO: DESIGN AND MODELING</h2>
+    <p>This chapter presents the design models developed to visualize the proposed NetUsage Hub Network Usage Monitoring System before physical coding began. Architectural modeling ensures that user specifications and structural database relationships are rigorously planned and validated.</p>
+
+    <h3 class="sub-heading">2.3.1 Login Process Flowchart</h3>
+    <div class="figure-box">
+        <div class="mermaid">
+        flowchart TD
+            Start([Start]) --> Input[Enter Username and Password]
+            Input --> Validate{Validate Credentials against DB}
+            Validate -- Valid Hash --> CreateSession[Initialize Session]
+            CreateSession --> RedirectDash[Redirect to Dashboard]
+            RedirectDash --> EndNode([End])
+            Validate -- Invalid --> ShowError[Display 'Invalid username or password' Error]
+            ShowError --> Input
+        </div>
+        <div class="figure-caption">Figure 2.3.1: Login Authentication Process Flowchart</div>
+    </div>
+
+    <h3 class="sub-heading">2.3.2 System Operations Flowchart</h3>
+    <div class="figure-box">
+        <div class="mermaid">
+        flowchart TD
+            StartNode([Start]) --> AuthCheck{User Logged In?}
+            AuthCheck -- No --> LoginPage[Display Login Interface]
+            LoginPage --> CheckLogin{Credentials Valid?}
+            CheckLogin -- No --> ErrMsg[Show Flash Error]
+            ErrMsg --> LoginPage
+            CheckLogin -- Yes --> SetSess[Create Session]
+            SetSess --> Dash[Display Dashboard Overview]
+            AuthCheck -- Yes --> Dash
+
+            Dash --> ActionSelect{Select Operation}
+            ActionSelect -- Devices --> DevOp[Inventory Control Center: Add / Edit / Delete]
+            ActionSelect -- Metrics --> MetOp[Record Telemetry Reading & Evaluate Limit]
+            ActionSelect -- Alerts --> AltOp[View Alerts & Mark Resolved]
+            ActionSelect -- Reports --> RepOp[Filter Date Range & Export CSV]
+
+            DevOp --> Dash
+            MetOp --> Dash
+            AltOp --> Dash
+            RepOp --> Dash
+        </div>
+        <div class="figure-caption">Figure 2.3.2: System Operations Flowchart</div>
+    </div>
+
+    <h3 class="sub-heading">2.3.3 Entity Relationship Diagram (ERD)</h3>
+    <div class="figure-box">
+        <div class="mermaid">
+        erDiagram
+            USERS {
+                int id PK
+                string username UK
+                string password_hash
+                string full_name
+                string role
+            }
+            DEVICES {
+                int id PK
+                string name
+                string ip_address UK
+                string device_type
+                string location
+                string status
+                decimal download_limit_mb
+                decimal upload_limit_mb
+            }
+            USAGE_METRICS {
+                bigint id PK
+                int device_id FK
+                decimal download_mb
+                decimal upload_mb
+                decimal latency_ms
+                decimal packet_loss_percent
+                datetime recorded_at
+            }
+            ALERTS {
+                bigint id PK
+                int device_id FK
+                bigint metric_id FK
+                string alert_type
+                string message
+                string severity
+                tinyint is_resolved
+            }
+            USERS ||--o{ DEVICES : "manages"
+            DEVICES ||--o{ USAGE_METRICS : "produces"
+            DEVICES ||--o{ ALERTS : "triggers"
+            USAGE_METRICS ||--o| ALERTS : "causes"
+        </div>
+        <div class="figure-caption">Figure 2.3.4: Entity Relationship Diagram (ERD)</div>
+    </div>
+
+    <h3 class="sub-heading">2.3.4 Use Case Diagram</h3>
+    <div class="figure-box">
+        <div class="mermaid">
+        flowchart LR
+            Admin((Network Administrator))
+            subgraph PortalBoundary [Net-Portal Monitoring System]
+                UC1([Login & Authentication])
+                UC2([Manage Devices: Add/Edit/Delete])
+                UC3([View Dashboard KPIs])
+                UC4([Record Telemetry Metrics])
+                UC5([Monitor Active Threshold Alerts])
+                UC6([Resolve Incidents])
+                UC7([Filter & Export Usage Reports])
+                UC8([Search Devices & Logs])
+            end
+            Admin --- UC1
+            Admin --- UC2
+            Admin --- UC3
+            Admin --- UC4
+            Admin --- UC5
+            Admin --- UC6
+            Admin --- UC7
+            Admin --- UC8
+        </div>
+        <div class="figure-caption">Figure 2.3.5: Use Case Diagram</div>
+    </div>
+
+    <h3 class="sub-heading">2.3.5 Class Diagram</h3>
+    <div class="figure-box">
+        <div class="mermaid">
+        classDiagram
+            class User {
+                +int id
+                +string username
+                +string password_hash
+                +login(): bool
+                +logout(): void
+            }
+            class Device {
+                +int id
+                +string name
+                +string ip_address
+                +float download_limit_mb
+                +save(): bool
+                +delete(): bool
+            }
+            class UsageMetric {
+                +int id
+                +int device_id
+                +float download_mb
+                +float upload_mb
+                +record(): int
+            }
+            class Alert {
+                +int id
+                +int device_id
+                +string message
+                +resolve(): bool
+            }
+            User "1" --> "*" Device : manages
+            Device "1" --> "*" UsageMetric : produces
+            Device "1" --> "*" Alert : incurs
+            UsageMetric "1" --> "0..1" Alert : triggers
+        </div>
+        <div class="figure-caption">Figure 2.3.6: System Class Diagram</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- CHAPTER THREE -->
+    <h2 class="chapter-heading">CHAPTER THREE: SYSTEM IMPLEMENTATION</h2>
+    <p>This chapter details the physical implementation of the NetUsage Hub system. Development was realized using <strong>PHP 8</strong>, <strong>MySQL</strong>, <strong>HTML5</strong>, <strong>CSS3</strong>, <strong>JavaScript</strong>, and <strong>Bootstrap 5</strong>. The presentation layer strictly reproduces the clean, card-oriented aesthetics specified in the institutional project template.</p>
+
+    <h3 class="sub-heading">3.2.1 Login Page Development</h3>
+    <p>The login form permits authenticated administrators to enter their credentials securely. Built with a responsive card layout, it validates user input and provides explicit error indicators upon authentication failures.</p>
+    <pre class="code-snippet">&lt;!-- Login Form (public/index.php) --&gt;
+&lt;form action="index.php" method="POST"&gt;
+    &lt;input type="hidden" name="csrf" value="&lt;?= csrf_token() ?&gt;"&gt;
+    &lt;div class="mb-3"&gt;
+        &lt;label class="form-label small text-muted mb-1"&gt;Username&lt;/label&gt;
+        &lt;div class="input-group"&gt;
+            &lt;span class="input-group-text bg-light border-end-0"&gt;&lt;i class="fa fa-user text-muted"&gt;&lt;/i&gt;&lt;/span&gt;
+            &lt;input type="text" name="username" class="form-control border-start-0 bg-light" placeholder="Enter username" required autofocus&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="mb-4"&gt;
+        &lt;label class="form-label small text-muted mb-1"&gt;Password&lt;/label&gt;
+        &lt;div class="input-group"&gt;
+            &lt;span class="input-group-text bg-light border-end-0"&gt;&lt;i class="fa fa-lock text-muted"&gt;&lt;/i&gt;&lt;/span&gt;
+            &lt;input type="password" name="password" class="form-control border-start-0 bg-light" placeholder="Enter password" required&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="d-grid"&gt;
+        &lt;button type="submit" class="btn btn-primary py-2 fw-semibold"&gt;Sign In&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</pre>
+    <div class="figure-caption">Figure 3.2.1: Login Page Development Code Snippet</div>
+
+    <h3 class="sub-heading">3.2.2 Dashboard Overview</h3>
+    <p>The dashboard provides three primary KPI cards (Total Monitored Devices, Active Threshold Alerts, and Today's Bandwidth), paired with a responsive infrastructure card grid showcasing device health, status badges, and quick-action triggers.</p>
+    <pre class="code-snippet">&lt;!-- Dashboard KPI Cards (public/dashboard.php) --&gt;
+&lt;div class="row g-4 mb-5"&gt;
+    &lt;div class="col-12 col-md-4"&gt;
+        &lt;div class="card border-0 shadow-sm h-100 text-center p-4"&gt;
+            &lt;div class="mb-2 text-primary opacity-75"&gt;&lt;i class="fa fa-server fa-2x"&gt;&lt;/i&gt;&lt;/div&gt;
+            &lt;h6 class="text-muted text-uppercase mb-1" style="font-size:0.72rem;"&gt;Total Inventory&lt;/h6&gt;
+            &lt;h3 class="fw-bold mb-0 text-dark"&gt;&lt;?= $stats['devices'] ?&gt;&lt;/h3&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-12 col-md-4"&gt;
+        &lt;div class="card border-0 shadow-sm h-100 text-center p-4"&gt;
+            &lt;div class="mb-2 &lt;?= $stats['alerts'] &gt; 0 ? 'text-danger' : 'text-success' ?&gt; opacity-75"&gt;
+                &lt;i class="fa fa-exclamation-triangle fa-2x"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+            &lt;h6 class="text-muted text-uppercase mb-1" style="font-size:0.72rem;"&gt;Threshold Alerts&lt;/h6&gt;
+            &lt;h3 class="fw-bold mb-0 &lt;?= $stats['alerts'] &gt; 0 ? 'text-danger' : 'text-success' ?&gt;"&gt;&lt;?= $stats['alerts'] ?&gt;&lt;/h3&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-12 col-md-4"&gt;
+        &lt;div class="card border-0 shadow-sm h-100 text-center p-4"&gt;
+            &lt;div class="mb-2 text-success opacity-75"&gt;&lt;i class="fa fa-bar-chart fa-2x"&gt;&lt;/i&gt;&lt;/div&gt;
+            &lt;h6 class="text-muted text-uppercase mb-1" style="font-size:0.72rem;"&gt;Today's Traffic&lt;/h6&gt;
+            &lt;h3 class="fw-bold mb-0 text-success"&gt;&lt;?= number_format($stats['today_mb'], 1) ?&gt; MB&lt;/h3&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+    <div class="figure-caption">Figure 3.2.2: Dashboard Implementation Code Snippet</div>
+
+    <h3 class="sub-heading">3.3.1 Login Authentication Logic</h3>
+    <pre class="code-snippet">// Backend Authentication Function (includes/auth.php)
+function attempt_login(string $username, string $password): bool {
+    $stmt = db()->prepare('SELECT * FROM users WHERE username = ? LIMIT 1');
+    $stmt->execute([$username]);
+    $record = $stmt->fetch();
+    if ($record && password_verify($password, $record['password_hash'])) {
+        session_regenerate_id(true);
+        $_SESSION['user'] = ['id' =&gt; $record['id'], 'username' =&gt; $record['username'], 'full_name' =&gt; $record['full_name'], 'role' =&gt; $record['role']];
+        return true;
+    }
+    return false;
+}</pre>
+    <div class="figure-caption">Figure 3.3.1: PHP User Authentication Function</div>
+
+    <h3 class="sub-heading">3.4 Testing</h3>
+    <table class="academic-table">
+        <thead>
+            <tr>
+                <th>Test Module</th>
+                <th>Testing Action</th>
+                <th>Expected Outcome</th>
+                <th>Actual Result</th>
+                <th>Correction Applied</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>User Login</strong></td>
+                <td>Tested valid and invalid credentials.</td>
+                <td>Valid logs in; invalid displays flash error.</td>
+                <td>Initial error was unstyled.</td>
+                <td>Added styled Bootstrap alert box for invalid credentials.</td>
+            </tr>
+            <tr>
+                <td><strong>Device Inventory</strong></td>
+                <td>Added new Cisco router and edited limits.</td>
+                <td>Saved accurately to MySQL database.</td>
+                <td>Correctly saved.</td>
+                <td>None.</td>
+            </tr>
+            <tr>
+                <td><strong>Threshold Alerts</strong></td>
+                <td>Simulated 6,000 MB download on 5,000 MB cap.</td>
+                <td>Automated critical alert generated.</td>
+                <td>Triggered correctly.</td>
+                <td>Linked alert to device profile and timestamp.</td>
+            </tr>
+            <tr>
+                <td><strong>Reporting & Export</strong></td>
+                <td>Applied date range and exported to CSV.</td>
+                <td>Downloads CSV file matching active filters.</td>
+                <td>Successfully downloaded.</td>
+                <td>Added explicit UTF-8 and RFC 4180 headers.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 class="sub-heading">3.5 Deployment</h3>
+    <p>The NetUsage Hub system has been deployed on the local Apache and MySQL stack under XAMPP at <code>C:\xampp\htdocs\netusage-monitoring</code>. The system is readily accessible on local intranet browsers via <code>http://localhost/netusage-monitoring/public/</code>. Production deployments can be hosted on standard Apache/Nginx web servers or cloud-based hosting platforms with HTTPS encryption enabled.</p>
+
+    <div class="page-break"></div>
+
+    <!-- CHAPTER FOUR -->
+    <h2 class="chapter-heading">CHAPTER FOUR: CONCLUSION AND RECOMMENDATION</h2>
+
+    <h3 class="sub-heading">4.1 Conclusion</h3>
+    <p>The primary aim of this project was to develop a web-based Network Usage Monitoring System (NetUsage Hub) to eliminate manual network auditing inefficiencies, unrecognized downtime, and unmonitored bandwidth expenditure. The developed system successfully automates hardware device tracking, real-time metric logging, threshold-based incident alerting, and business intelligence reporting. Through this project, core proficiencies were gained in full-stack web engineering, secure session architecture, and database design.</p>
+
+    <h3 class="sub-heading">4.2 Recommendation</h3>
+    <p>For future development, the following improvements are recommended:</p>
+    <ol>
+        <li><strong>Automated SNMP Polling:</strong> Integrate automated Simple Network Management Protocol daemons to poll hardware counters directly.</li>
+        <li><strong>SMS & Email Notifications:</strong> Connect Africa's Talking or Twilio APIs to dispatch automated incident alerts directly to network technicians' phones.</li>
+        <li><strong>M-Pesa Payment Integration:</strong> Enable automated bandwidth purchasing via the Safaricom Daraja M-Pesa API for commercial cyber and ISP deployments.</li>
+        <li><strong>Machine Learning Forecasting:</strong> Implement predictive bandwidth modeling to forecast traffic spikes before network congestion occurs.</li>
+    </ol>
+
+    <div class="page-break"></div>
+
+    <!-- REFERENCES -->
+    <h2 class="chapter-heading">REFERENCES</h2>
+    <ul style="padding-left: 20px;">
+        <li class="mb-2">Djohan, T., & Stefvy. (2023, April). “Inventory Shortages and Poor Management Systems Negatively Affect Customer Satisfaction in the Retail and Infrastructure Industry”. <em>Research Synergy Press Journals</em>. https://www.researchgate.net/publication/371763839</li>
+        <li class="mb-2">International Telecommunication Union (ITU). (2023). <em>Measuring digital development: Facts and figures 2023</em>. Geneva: ITU Publications. https://www.itu.int/en/Pages/default.aspx</li>
+        <li class="mb-2">Kurose, J. F., & Ross, K. W. (2021). <em>Computer Networking: A Top-Down Approach</em> (8th ed.). Pearson Education.</li>
+        <li class="mb-2">Laudon, K. C., & Laudon, J. P. (2022). <em>Management Information Systems: Managing the Digital Firm</em> (17th ed.). Pearson Education.</li>
+        <li class="mb-2">Mhlongo, N. et al. (2024, February 6). “Reviewing the impact of cloud computing and network automation on small and medium enterprises in Africa”. <em>International Journal of Science and Research Archive</em>, 11(1), 234-245. https://ijsra.net/sites/default/files/IJSRA-2024-0236.pdf</li>
+        <li class="mb-2">Rashid, M. et al. (2025, July 18). “A Review of Technological Advancements and Operational Improvements in IoT and Telemetry for Network Inventory Management”. <em>International Journal of Research and Innovation in Social Science (IJRISS)</em>. https://rsisinternational.org/journals/ijriss/</li>
+        <li class="mb-2">Stallings, W. (2020). <em>Data and Computer Communications</em> (10th ed.). Pearson Education.</li>
+    </ul>
+
+</div>
+
+</body>
+</html>

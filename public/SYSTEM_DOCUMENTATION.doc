@@ -1,0 +1,942 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>NETWORK USAGE MONITORING SYSTEM - SYSTEM DOCUMENTATION</title>
+<!--[if gte mso 9]>
+<xml>
+<w:WordDocument>
+<w:View>Print</w:View>
+<w:Zoom>100</w:Zoom>
+<w:DoNotOptimizeForBrowser/>
+</w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+@page {
+    size: 21.0cm 29.7cm; /* A4 */
+    margin: 2.54cm 2.54cm 2.54cm 2.54cm; /* 1 inch */
+    mso-page-orientation: portrait;
+}
+body {
+    font-family: 'Times New Roman', serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000000;
+}
+h1, h2, h3, h4 {
+    font-family: 'Arial', sans-serif;
+    color: #000000;
+    margin-top: 18pt;
+    margin-bottom: 6pt;
+}
+h1 { font-size: 16pt; font-weight: bold; text-align: center; }
+h2 { font-size: 14pt; font-weight: bold; }
+h3 { font-size: 12pt; font-weight: bold; }
+p { margin-bottom: 6pt; text-align: justify; }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12pt 0;
+}
+table, th, td {
+    border: 1px solid #000000;
+    padding: 6pt 8pt;
+    font-size: 10.5pt;
+}
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: left;
+}
+.page-break {
+    page-break-before: always;
+    mso-break-type: section-break;
+}
+.cover-container {
+    text-align: center;
+    padding-top: 50pt;
+}
+.univ-header {
+    font-family: 'Arial', sans-serif;
+    font-size: 20pt;
+    font-weight: bold;
+    letter-spacing: 2pt;
+}
+.univ-sub {
+    font-family: 'Arial', sans-serif;
+    font-size: 11pt;
+    font-style: italic;
+    margin-bottom: 70pt;
+}
+.doc-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 18pt;
+    font-weight: bold;
+    margin-bottom: 12pt;
+}
+.doc-sub {
+    font-family: 'Arial', sans-serif;
+    font-size: 13pt;
+    font-weight: bold;
+    margin-bottom: 80pt;
+}
+.submitted-box {
+    font-size: 11pt;
+    margin-bottom: 60pt;
+}
+pre {
+    background-color: #f5f5f5;
+    border: 1px solid #cccccc;
+    padding: 8pt;
+    font-family: 'Courier New', monospace;
+    font-size: 9.5pt;
+    white-space: pre-wrap;
+}
+.caption {
+    font-family: 'Arial', sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 4pt;
+    margin-bottom: 12pt;
+}
+.diagram-box {
+    border: 1px solid #999999;
+    background: #fafafa;
+    padding: 12pt;
+    text-align: center;
+    margin: 12pt 0;
+    font-family: monospace;
+}
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover-container">
+    <div class="univ-header">ZETECH UNIVERSITY</div>
+    <div class="univ-sub">Inventing the future</div>
+
+    <div class="doc-title">NETWORK USAGE MONITORING SYSTEM</div>
+    <div class="doc-sub">SYSTEM DOCUMENTATION</div>
+
+    <div class="submitted-box">
+        <strong>SUBMITTED BY,</strong><br><br>
+        <strong>Student Name:</strong> Brenda Chebet Chelule<br>
+        <strong>Registration Number:</strong> DCS-01-0892/2024<br><br>
+        A SYSTEM DOCUMENTATION SUBMITTED IN PARTIAL FULFILMENT FOR THE AWARD OF DIPLOMA IN COMPUTER SCIENCE BY ZETECH UNIVERSITY
+    </div>
+
+    <div style="font-weight: bold; font-size: 12pt;">AUGUST 2026</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- DECLARATION -->
+<h1>DECLARATION</h1>
+<p>I Brenda Chebet do declare that this is my original work and it has never been submitted elsewhere for any academic award.</p>
+<br>
+<p><strong>Student Name:</strong> Brenda Chebet Chelule &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Sign:</strong> _________________ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Date:</strong> _________</p>
+<br>
+<p><strong>Supervisor Name:</strong> _________________________ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Sign:</strong> _________________ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Date:</strong> __________</p>
+
+<div class="page-break"></div>
+
+<!-- DEDICATION -->
+<h1>DEDICATION</h1>
+<p>This project is dedicated to my family for their constant support, encouragement, and understanding throughout my academic journey. Their motivation and belief in my abilities gave me the strength to complete this project successfully.</p>
+<p>Also, this project is dedicated to all students pursuing knowledge and innovation in the field of computer science.</p>
+
+<div class="page-break"></div>
+
+<!-- ABSTRACT -->
+<h1>ABSTRACT</h1>
+<p>This project focuses on the design and development of a Network Usage Monitoring System to improve the efficiency of managing network operations. Many small organizations rely on semi-automated record keeping and manual router checks, which often leads to bandwidth inaccuracies and difficulty in tracking device performance. The developed system provides a digital platform that allows the network administrator to manage device inventory, record usage metrics, and generate reports. The system was developed using PHP with HTML, CSS, and JavaScript for the interface and MySQL for the database. The system improves accuracy, enhances network control, and helps the administrator make better decisions through organized and real-time information management.</p>
+
+<div class="page-break"></div>
+
+<!-- DEFINITION OF KEY TERMS -->
+<h1>DEFINITION OF KEY TERMS</h1>
+<p><strong>Network Usage Monitoring System</strong> - A computerized system used to track, manage, and control network devices and bandwidth utilization, including adding, updating, and monitoring available hardware.</p>
+<p><strong>Database</strong> - An organized collection of data stored electronically that allows easy access, management, and updating of information such as device records and metric transactions.</p>
+<p><strong>User Authentication</strong> - A security process that verifies the identity of a user by checking login credentials such as a username and password before granting access to the system.</p>
+<p><strong>Dashboard</strong> - A graphical user interface that displays key information such as total devices, threshold alerts, and daily traffic to help the user monitor system performance.</p>
+<p><strong>Metric Log</strong> - A record that keeps track of all network readings made in the system, including device name, download, upload, date, and latency.</p>
+<p><strong>Threshold Alert</strong> - A system notification that warns the user when the bandwidth consumption of a particular device exceeds a predefined limit.</p>
+<p><strong>Entity Relationship Diagram (ERD)</strong> - A visual representation that shows how different data entities such as users, devices, metrics, and alerts are related within a database.</p>
+<p><strong>Data Flow Diagram (DFD)</strong> - A diagram that illustrates how data moves through the system and how it is processed between different components.</p>
+<p><strong>PHP PDO Framework</strong> - A robust server-side scripting environment in PHP used to build the backend logic and secure database access for the network monitoring system.</p>
+<p><strong>Deployment</strong> - The process of making the system available for use by hosting it on a server so users can access it through a local network or the internet.</p>
+
+<div class="page-break"></div>
+
+<!-- ABBREVIATIONS AND ACRONYMS -->
+<h1>ABBREVIATIONS AND ACRONYMS</h1>
+<p><strong>API</strong> – Application Programming Interface</p>
+<p><strong>CSS</strong> – Cascading Style Sheets</p>
+<p><strong>DFD</strong> – Data Flow Diagram</p>
+<p><strong>ERD</strong> – Entity Relationship Diagram</p>
+<p><strong>HTML</strong> – Hypertext Markup Language</p>
+<p><strong>IDE</strong> – Integrated Development Environment</p>
+<p><strong>IP</strong> – Internet Protocol</p>
+<p><strong>ISP</strong> – Internet Service Provider</p>
+<p><strong>IT</strong> – Information Technology</p>
+<p><strong>LAN</strong> – Local Area Network</p>
+<p><strong>MB</strong> – Megabyte</p>
+<p><strong>Mbps</strong> – Megabits Per Second</p>
+<p><strong>NOC</strong> – Network Operations Center</p>
+<p><strong>PDO</strong> – PHP Data Objects</p>
+<p><strong>PHP</strong> – Hypertext Preprocessor</p>
+<p><strong>SQL</strong> – Structured Query Language</p>
+<p><strong>UI</strong> – User Interface</p>
+<p><strong>URL</strong> – Uniform Resource Locator</p>
+<p><strong>WAN</strong> – Wide Area Network</p>
+
+<div class="page-break"></div>
+
+<!-- TABLE OF CONTENTS -->
+<h1>TABLE OF CONTENTS</h1>
+<table style="border:none;">
+<tr style="border:none;"><td style="border:none;">DECLARATION</td><td style="border:none; text-align:right;">i</td></tr>
+<tr style="border:none;"><td style="border:none;">DEDICATION</td><td style="border:none; text-align:right;">ii</td></tr>
+<tr style="border:none;"><td style="border:none;">ABSTRACT</td><td style="border:none; text-align:right;">iii</td></tr>
+<tr style="border:none;"><td style="border:none;">DEFINITION OF KEY TERMS</td><td style="border:none; text-align:right;">iv</td></tr>
+<tr style="border:none;"><td style="border:none;">ABBREVIATIONS AND ACRONYMS</td><td style="border:none; text-align:right;">v</td></tr>
+<tr style="border:none;"><td style="border:none;">Table of contents</td><td style="border:none; text-align:right;">vi</td></tr>
+<tr style="border:none;"><td style="border:none;">LIST OF FIGURES</td><td style="border:none; text-align:right;">viii</td></tr>
+<tr style="border:none;"><td style="border:none;">LIST OF TABLES</td><td style="border:none; text-align:right;">ix</td></tr>
+<tr style="border:none;"><td style="border:none;"><strong>1. CHAPTER ONE: PROJECT PLANNING AND ANALYSIS</strong></td><td style="border:none; text-align:right;"><strong>1</strong></td></tr>
+<tr style="border:none;"><td style="border:none;">1.1. Statement of Problem</td><td style="border:none; text-align:right;">1</td></tr>
+<tr style="border:none;"><td style="border:none;">1.2. Study Justification</td><td style="border:none; text-align:right;">1</td></tr>
+<tr style="border:none;"><td style="border:none;">1.3. System Objectives</td><td style="border:none; text-align:right;">2</td></tr>
+<tr style="border:none;"><td style="border:none;">1.3.1. General Objective</td><td style="border:none; text-align:right;">2</td></tr>
+<tr style="border:none;"><td style="border:none;">1.3.2. Specific Objectives</td><td style="border:none; text-align:right;">2</td></tr>
+<tr style="border:none;"><td style="border:none;">1.4. Functional Requirements</td><td style="border:none; text-align:right;">3</td></tr>
+<tr style="border:none;"><td style="border:none;">1.5. Breakdown of Tools & Resources to Be Used</td><td style="border:none; text-align:right;">4</td></tr>
+<tr style="border:none;"><td style="border:none;">1.6. Gantt chart</td><td style="border:none; text-align:right;">5</td></tr>
+<tr style="border:none;"><td style="border:none;"><strong>2. CHAPTER TWO: DESIGN AND MODELING</strong></td><td style="border:none; text-align:right;"><strong>6</strong></td></tr>
+<tr style="border:none;"><td style="border:none;">2.1. Introduction to Modelling</td><td style="border:none; text-align:right;">6</td></tr>
+<tr style="border:none;"><td style="border:none;">2.2. User Interface Models</td><td style="border:none; text-align:right;">6</td></tr>
+<tr style="border:none;"><td style="border:none;">2.2.1. Login page</td><td style="border:none; text-align:right;">6</td></tr>
+<tr style="border:none;"><td style="border:none;">2.2.2. Inventory management</td><td style="border:none; text-align:right;">7</td></tr>
+<tr style="border:none;"><td style="border:none;">2.2.3. Metric logs</td><td style="border:none; text-align:right;">7</td></tr>
+<tr style="border:none;"><td style="border:none;">2.2.4. Reports</td><td style="border:none; text-align:right;">8</td></tr>
+<tr style="border:none;"><td style="border:none;">2.3. Logic Models</td><td style="border:none; text-align:right;">8</td></tr>
+<tr style="border:none;"><td style="border:none;">2.3.1. Log in process flowchart</td><td style="border:none; text-align:right;">8</td></tr>
+<tr style="border:none;"><td style="border:none;">2.3.2. System flowchart</td><td style="border:none; text-align:right;">9</td></tr>
+<tr style="border:none;"><td style="border:none;">2.3.3. Data flow diagrams</td><td style="border:none; text-align:right;">10</td></tr>
+<tr style="border:none;"><td style="border:none;">2.3.4. Entity relationship diagram</td><td style="border:none; text-align:right;">11</td></tr>
+<tr style="border:none;"><td style="border:none;">2.3.5. Use case diagram</td><td style="border:none; text-align:right;">12</td></tr>
+<tr style="border:none;"><td style="border:none;">2.3.6. Class diagrams</td><td style="border:none; text-align:right;">13</td></tr>
+<tr style="border:none;"><td style="border:none;"><strong>3. CHAPTER THREE: SYSTEM IMPLEMENTATION</strong></td><td style="border:none; text-align:right;"><strong>14</strong></td></tr>
+<tr style="border:none;"><td style="border:none;">3.1. Introduction</td><td style="border:none; text-align:right;">14</td></tr>
+<tr style="border:none;"><td style="border:none;">3.2. User Interface Development</td><td style="border:none; text-align:right;">14</td></tr>
+<tr style="border:none;"><td style="border:none;">3.2.1. Login Page Development</td><td style="border:none; text-align:right;">14</td></tr>
+<tr style="border:none;"><td style="border:none;">3.2.2. Dashboard</td><td style="border:none; text-align:right;">16</td></tr>
+<tr style="border:none;"><td style="border:none;">3.2.3. Navigation bar</td><td style="border:none; text-align:right;">18</td></tr>
+<tr style="border:none;"><td style="border:none;">3.2.4. Inventory</td><td style="border:none; text-align:right;">19</td></tr>
+<tr style="border:none;"><td style="border:none;">3.2.5. Add new device form</td><td style="border:none; text-align:right;">20</td></tr>
+<tr style="border:none;"><td style="border:none;">3.2.6. Metric logs</td><td style="border:none; text-align:right;">22</td></tr>
+<tr style="border:none;"><td style="border:none;">3.2.7. Reports</td><td style="border:none; text-align:right;">23</td></tr>
+<tr style="border:none;"><td style="border:none;">3.3. Logic Development</td><td style="border:none; text-align:right;">25</td></tr>
+<tr style="border:none;"><td style="border:none;">3.3.1. Login</td><td style="border:none; text-align:right;">25</td></tr>
+<tr style="border:none;"><td style="border:none;">3.3.2. Dashboard</td><td style="border:none; text-align:right;">26</td></tr>
+<tr style="border:none;"><td style="border:none;">3.3.3. Inventory</td><td style="border:none; text-align:right;">27</td></tr>
+<tr style="border:none;"><td style="border:none;">3.3.4. Metric logs and reports</td><td style="border:none; text-align:right;">29</td></tr>
+<tr style="border:none;"><td style="border:none;">3.4. Testing</td><td style="border:none; text-align:right;">30</td></tr>
+<tr style="border:none;"><td style="border:none;">3.5. Deployment</td><td style="border:none; text-align:right;">31</td></tr>
+<tr style="border:none;"><td style="border:none;"><strong>4. CHAPTER FOUR: CONCLUSION AND RECOMMENDATION</strong></td><td style="border:none; text-align:right;"><strong>32</strong></td></tr>
+<tr style="border:none;"><td style="border:none;">4.1. Conclusion</td><td style="border:none; text-align:right;">32</td></tr>
+<tr style="border:none;"><td style="border:none;">4.2. Recommendation</td><td style="border:none; text-align:right;">32</td></tr>
+<tr style="border:none;"><td style="border:none;">REFERENCES</td><td style="border:none; text-align:right;">33</td></tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- LIST OF FIGURES & TABLES -->
+<h1>LIST OF FIGURES</h1>
+<p>Figure 2.2.1 login page ........................................................................................ 6</p>
+<p>Figure 2.2.2 inventory management form ................................................................ 7</p>
+<p>Figure 2.2.3 metric log ........................................................................................... 7</p>
+<p>Figure 2.2.4 reporting form ..................................................................................... 8</p>
+<p>Figure 2.3.1 login process flowchart ....................................................................... 8</p>
+<p>Figure 2.3.2 system flowchart ................................................................................. 9</p>
+<p>Figure 2.3.3 DFD ................................................................................................... 10</p>
+<p>Figure 2.3.4 ER Diagram ........................................................................................ 11</p>
+<p>Figure 2.3.5 use case diagram ................................................................................ 12</p>
+<p>Figure 2.3.6 class diagram ..................................................................................... 13</p>
+<p>Figure 3.2.1 login page development ..................................................................... 15</p>
+<p>Figure 3.2.2 dashboard development ...................................................................... 17</p>
+<p>Figure 3.2.3 navigation bar .................................................................................... 18</p>
+<p>Figure 3.2.4 inventory control center ...................................................................... 20</p>
+<p>Figure 3.2.5 add new device ................................................................................... 21</p>
+<p>Figure 3.2.6 metric logs ......................................................................................... 22</p>
+<p>Figure 3.2.7 reports ................................................................................................ 24</p>
+<p>Figure 3.3.1 PHP-based user authentication function implemented using PDO ........... 25</p>
+<p>Figure 3.3.2 dashboard backend development ........................................................ 26</p>
+<p>Figure 3.3.3 inventory backend development ........................................................ 28</p>
+<p>Figure 3.3.4 metric backend development .............................................................. 29</p>
+
+<h1>LIST OF TABLES</h1>
+<p>Table 1.4.1 functional requirements ...................................................................... 3</p>
+<p>Table 1.6.1 project schedule breakdown ................................................................ 5</p>
+<p>Table 3.4.1 testing results and corrections ............................................................. 30</p>
+
+<div class="page-break"></div>
+
+<!-- CHAPTER ONE -->
+<h1>CHAPTER ONE: PROJECT PLANNING AND ANALYSIS</h1>
+
+<h2>Statement of Problem</h2>
+<p>Despite the growth of the digital economy, many small and medium-sized organizations continue to manage their internal network operations using semi-automated methods, such as paper-based logbooks, manual router command lines, and fragmented spreadsheets. These traditional methods present significant operational challenges, including frequent bandwidth inaccuracies, difficulty in tracking historical data usage, and a general lack of centralized security (Laudon & Laudon, 2022).</p>
+<p>In the specific network facility under study, <strong>NetUsage Hub in Kisii</strong>, the absence of a centralized management system has led to critical inefficiencies. Currently, device inventory tracking and bandwidth usage recording are handled manually, leading to human errors and unmonitored traffic spikes. Furthermore, decision-making regarding bandwidth allocation and link restocking is based on administrative guesswork rather than empirical telemetry data. This fragmentation makes it nearly impossible for the administrator to analyze trends, such as identifying top bandwidth-consuming devices or calculating real-time daily traffic. As the volume of networked devices grows, these manual processes become unsustainable, causing operational bottlenecks, network congestion, and potential revenue loss. There is, therefore, a need to develop a centralized, secure internal management portal that automates device tracking, simplifies metric logging, and provides real-time network analytics. Such a system is essential for improving administrative efficiency, ensuring record accuracy, and enabling evidence-based business decisions.</p>
+
+<h2>Study Justification</h2>
+<p>The development of this project is justified by the critical need for digital transformation within the internal operations of network operations centers and enterprise internet hubs. While the telecommunications sector has modernized, many independent network facilities still struggle with manual record-keeping, leading to bandwidth inconsistencies and unreliable performance reporting (Rashid et al., 2025). This project addresses these gaps by providing an automated, centralized platform for internal management.</p>
+<p>From a management perspective, this study is significant as it eliminates the reliance on paper-based ledger systems and unorganized spreadsheets. By implementing a secure internal portal, the network administrator can maintain data integrity through automated status updates and real-time transaction logging. This reduces human error and prevents operational bottlenecks caused by unaccounted traffic or device downtime. Furthermore, the project is justified by its contribution to informed decision-making. The integration of a traffic analytics dashboard allows the administrator to quickly identify top bandwidth-consuming devices and monitor daily usage trends. This shifts the business from a reactive "guesswork" approach to a proactive, data-driven strategy. Ultimately, this system improves overall operational efficiency and ensures that the network hub can scale its internal processes to meet increasing demand without increasing administrative workload.</p>
+
+<h2>System Objectives</h2>
+
+<h3>General Objective</h3>
+<p>To develop a network usage monitoring system for NetUsage Hub.</p>
+
+<h3>Specific Objectives</h3>
+<p>1. To develop a device inventory management module for adding, editing and deleting device records, categories and bandwidth limits.</p>
+<p>2. To develop an automated metric processing mechanism that captures network usage and logs transactions in real-time.</p>
+<p>3. To implement a threshold alert system that automatically flags devices exceeding configured bandwidth limits.</p>
+<p>4. To integrate a search functionality for quick retrieval of device details using names, IP addresses or categories.</p>
+
+<h2>Functional Requirements</h2>
+<table>
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>User Activities</th>
+            <th>Features</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="6"><strong>Network Administrator</strong></td>
+            <td>Sign up and log in</td>
+            <td>Log in page</td>
+        </tr>
+        <tr>
+            <td>Add, update and remove device records</td>
+            <td>Device inventory management module</td>
+        </tr>
+        <tr>
+            <td>Monitor bandwidth levels and metrics</td>
+            <td>Real-time bandwidth monitoring</td>
+        </tr>
+        <tr>
+            <td>Generate inventory and traffic reports</td>
+            <td>Traffic and inventory reporting tools</td>
+        </tr>
+        <tr>
+            <td>Make bandwidth allocation and upgrade decisions</td>
+            <td>Threshold and limit alerts</td>
+        </tr>
+        <tr>
+            <td>Manage device quotas and configurations</td>
+            <td>Quota and configuration management</td>
+        </tr>
+    </tbody>
+</table>
+<div class="caption">Table 1.4.1 functional requirements</div>
+
+<h2>Breakdown of Tools & Resources to Be Used</h2>
+<h3>1. Software Tools</h3>
+<p><strong>Full-Stack Framework:</strong> PHP – lightweight server-side scripting environment used to handle both front-end integration and back-end logic, including routing, API handling, and security.</p>
+<p><strong>Front-End:</strong> HTML, CSS, JavaScript – used for structuring web pages, styling the interface, ensuring responsiveness, and adding interactivity.</p>
+<p><strong>Database:</strong> MySQL – a relational database system used for storing application data in a secure, structured format.</p>
+
+<h3>2. Development Environment</h3>
+<p><strong>IDE:</strong> Visual Studio Code – for writing and managing front-end and back-end code.</p>
+<p><strong>Version Control:</strong> Git and GitHub – Git for local version control to track changes in the source code, while GitHub was used as a remote repository for backup, collaboration, and project management.</p>
+
+<h3>3. Deployment Resources</h3>
+<p><strong>Application Hosting:</strong> XAMPP / Apache Web Server will be used to host the web application and manage the MySQL database in a live local and network environment.</p>
+<p><strong>Application Structure:</strong> The front-end is integrated and served through PHP includes and public assets within the same application.</p>
+
+<h3>4. Hardware Resources</h3>
+<p><strong>Client Devices:</strong> Desktop computers, laptops and smartphones for accessing and testing the system.</p>
+<p><strong>Server Machine:</strong> Local development PC running XAMPP.</p>
+<p><strong>Networking Devices:</strong> Internet-enabled devices, routers and switches for system access and telemetry updates.</p>
+
+<h3>5. Human Resources</h3>
+<p><strong>System Developer:</strong> Responsible for system design, development, testing and documentation.</p>
+<p><strong>Test Users:</strong> Classmates and network technicians.</p>
+<p><strong>Project Supervisor:</strong> Provides guidance, monitoring, and evaluation throughout the project.</p>
+
+<h2>1.6 Project Schedule Breakdown</h2>
+<h3>Gantt chart</h3>
+<table>
+    <thead>
+        <tr>
+            <th rowspan="2">WEEKS</th>
+            <th colspan="6" style="text-align:center;">PROJECT MILESTONES</th>
+        </tr>
+        <tr>
+            <th>Planning & Analysis</th>
+            <th>Design & Modeling</th>
+            <th>Development & Testing</th>
+            <th>Deployment</th>
+            <th>Final Documentation</th>
+            <th>Presentation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>4-8 May</td><td style="background:#333; color:#fff; text-align:center;">■</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>11-15 May</td><td style="background:#333; color:#fff; text-align:center;">■</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>18-22 May</td><td></td><td style="background:#333; color:#fff; text-align:center;">■</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>25-29 May</td><td></td><td style="background:#333; color:#fff; text-align:center;">■</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>1-5 Jun</td><td></td><td></td><td style="background:#333; color:#fff; text-align:center;">■</td><td></td><td></td><td></td></tr>
+        <tr><td>8-12 Jun</td><td></td><td></td><td style="background:#333; color:#fff; text-align:center;">■</td><td></td><td></td><td></td></tr>
+        <tr><td>15-19 Jun</td><td></td><td></td><td style="background:#333; color:#fff; text-align:center;">■</td><td></td><td></td><td></td></tr>
+        <tr><td>22-26 Jun</td><td></td><td></td><td style="background:#333; color:#fff; text-align:center;">■</td><td></td><td></td><td></td></tr>
+        <tr><td>29-3 Jul</td><td></td><td></td><td></td><td style="background:#333; color:#fff; text-align:center;">■</td><td></td><td></td></tr>
+        <tr><td>6-10 Jul</td><td></td><td></td><td></td><td style="background:#333; color:#fff; text-align:center;">■</td><td></td><td></td></tr>
+        <tr><td>13-17 Jul</td><td></td><td></td><td></td><td></td><td style="background:#333; color:#fff; text-align:center;">■</td><td></td></tr>
+        <tr><td>20-24 Jul</td><td></td><td></td><td></td><td></td><td style="background:#333; color:#fff; text-align:center;">■</td><td></td></tr>
+        <tr><td>31st July</td><td></td><td></td><td></td><td></td><td></td><td style="background:#333; color:#fff; text-align:center;">■</td></tr>
+    </tbody>
+</table>
+<div class="caption">Table 1.6.1 project schedule breakdown</div>
+
+<div class="page-break"></div>
+
+<!-- CHAPTER TWO -->
+<h1>CHAPTER TWO: DESIGN AND MODELING</h1>
+
+<h2>Introduction to Modelling</h2>
+<p>This chapter presents the system designs and models developed to visualize the proposed network usage monitoring system before the actual implementation began. The diagrams and models illustrate how the system would function, how users would interact with it and how data would flow within the system. Modeling the system prior to development helped to clarify requirements, identify potential challenges early and ensure that all system components are well organized. This approach reduces development errors, improves planning and provides a clear blueprint that guides the implementation process, resulting in an efficient, reliable and a well-structured system.</p>
+
+<h2>User Interface Models</h2>
+
+<h3>Login page</h3>
+<div class="diagram-box">
++-------------------------------------------------------------+<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;network usage monitoring system&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ Username ]&nbsp;&nbsp;[________________________]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ Password ]&nbsp;&nbsp;[________________________]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;&nbsp;Sign In&nbsp;&nbsp;]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
++-------------------------------------------------------------+
+</div>
+<div class="caption">Figure 2.2.1 login page</div>
+<p>The login page illustrates a simple and secure interface where registered administrators enter their username and password to access the system.</p>
+
+<h3>Inventory management</h3>
+<div class="diagram-box">
++-----------------------------------------------------------------------------------------+<br>
+| [Device Info]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[IP Address]&nbsp;&nbsp;&nbsp;&nbsp;[Limits]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Status]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Action]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+| Cisco Core Router 192.168.1.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DL: 5000 MB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Online (High)&nbsp;&nbsp;&nbsp;&nbsp;Log / Edit / Remove |<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ Add Device ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
++-----------------------------------------------------------------------------------------+
+</div>
+<div class="caption">Figure 2.2.2 inventory management form</div>
+<p>The inventory management form shows how the network administrator can view all devices, monitor status, identify high-usage or offline items and update quotas or configurations, enabling efficient network control and timely maintenance.</p>
+
+<h3>Sales logs</h3>
+<div class="diagram-box">
++-----------------------------------------------------------------------------------------+<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ Summary Report ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+| [Time]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Device Name]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Download]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Upload]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+| 10:35 AM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cisco Core Router&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1,200 MB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;450 MB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
++-----------------------------------------------------------------------------------------+
+</div>
+<div class="caption">Figure 2.2.3 sales log</div>
+<p>The sales log is a structured table for recording daily metrics. It tracks the time, device polled, download, upload, and total bandwidth. It helps monitor bandwidth, manage inventory, and identify high-consuming devices efficiently.</p>
+
+<h3>Reports</h3>
+<div class="diagram-box">
++-----------------------------------------------------------------------------------------+<br>
+| [ Total Bandwidth ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ Top Consuming Devices ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+| &nbsp;&nbsp;&nbsp;4,850 MB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Device Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total MB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cisco Core Router&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2,450 MB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ View Full Logs ]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
++-----------------------------------------------------------------------------------------+
+</div>
+<div class="caption">Figure 2.2.4 reporting form</div>
+<p>The reporting form illustrates how the system generates bandwidth, device, and performance reports, helping the network administrator analyze trends, track heavy traffic users and make informed business decisions.</p>
+
+<h2>Logic Models</h2>
+
+<h3>Log in process flowchart.</h3>
+<div class="diagram-box">
+(Start) --> [Enter Username and Password] --> &lt;Validate Credentials&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Valid: Yes]&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;[Valid: No]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Successful] --------> (End)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Error] -- (Return to Input)
+</div>
+<div class="caption">Figure 2.3.1 login process flowchart</div>
+<p>This flowchart illustrates the steps involved when a user logs into the system. It shows how user credentials are entered, validated, authenticated and either granted access or denied based on correctness.</p>
+
+<h3>System flow chart</h3>
+<p>The flowchart illustrates how a network usage monitoring system operates from start to finish. The process begins with user login, where the system verifies the user’s credentials. If the login is invalid, an error message is displayed; if valid, the user is directed to the dashboard. From there, the user selects an operation such as adding, updating, deleting, or viewing items. Each option allows interaction with the database, where device details are entered, modified, removed, or displayed accordingly. After completing these actions, the system may generate a report based on the inventory data. Finally, the process ends once the user completes their tasks. This flow ensures efficient management, accurate record keeping, and easy access to network telemetry.</p>
+<div class="caption">Figure 2.3.2 system flowchart</div>
+
+<h3>Data flow diagrams</h3>
+<div class="diagram-box">
+[ Network Administrator ]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (Login, Device Data, Telemetry Readings)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v<br>
+[ 0. Network Usage Monitoring System ]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+---> (Stock & Bandwidth Alerts)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+---> (Reports & Telemetry Data)
+</div>
+<div class="caption">Figure 2.3.3 DFD</div>
+<p>The Level 1 Data Flow Diagram illustrates how the network usage monitoring system is divided into four main processes: login, inventory management, metric processing, and report generation. The administrator interacts with the system by entering login details, managing device records, recording metrics, and viewing reports. Each process communicates with specific data stores, namely the User Database, Devices Database, and Usage Database, ensuring proper data storage, retrieval, and system functionality.</p>
+
+<h3>Entity relationship diagram</h3>
+<div class="diagram-box">
+[ User ] --&lt; Manages &gt;-- [ Device ] --&lt; Records &gt;-- [ Metric / Alert ]<br>
+Attributes: User(user_id, username, password)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Device(device_id, name, ip, limits, status, category)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Metric(metric_id, device_id, download, upload, date)
+</div>
+<div class="caption">Figure 2.3.4 ER Diagram</div>
+<p>The Entity Relationship Diagram (ERD) represents the database structure of the network usage monitoring system. It consists of main entities: User, Device, Metric, and Alert. The User entity stores login credentials for system access. The Device entity contains details about each hardware node, including name, IP address, status, and bandwidth limit. The Metric entity records telemetry details such as download, upload, and recorded date. The relationships show that one user can manage many devices, while each device can be associated with multiple usage logs and alerts. The Metric entity includes a foreign key (device_id) to link each reading to a specific device, ensuring data integrity and proper tracking of transactions.</p>
+
+<h3>Use case diagram</h3>
+<p>The use case diagram for the Network Usage Monitoring System illustrates the interactions between the administrator and the system. The actor, represented by a stick figure, can perform several functions within the system boundary, including login, managing devices (adding, editing, deleting), viewing inventory, logging metrics, viewing transaction logs, generating reports, and searching devices. Each functionality is represented as an oval, and lines connecting the actor to the use cases show the interactions. This diagram helps visualize the system’s main features and the user’s role in performing tasks efficiently.</p>
+<div class="caption">Figure 2.3.5 use case diagram</div>
+
+<h3>Class diagrams</h3>
+<p>The class diagram for the Network Usage Monitoring System shows the main classes in the system and how they relate to each other. The User class represents the administrator who can log in and manage operations. The Device class stores details about each hardware device, such as name, IP address, and bandwidth cap. The Metric class records transaction information, including the date and total bytes transferred, and is linked to both the user and the devices monitored. The Report class generates reports based on metric data. The relationships between these classes illustrate how users manage devices, metrics belong to devices, and reports are generated from metrics, providing a clear structure of how the system functions.</p>
+<div class="caption">Figure 2.3.6 class diagram</div>
+
+<div class="page-break"></div>
+
+<!-- CHAPTER THREE -->
+<h1>CHAPTER THREE: SYSTEM IMPLEMENTATION</h1>
+
+<h2>Introduction</h2>
+<p>This chapter focuses on the implementation of the system, detailing the journey from development to deployment. It begins with the development process, explaining how the design specifications and requirements were transformed into a working application using suitable programming tools, frameworks, and technologies. The chapter then discusses the testing phase, highlighting the methods employed to identify and correct errors, ensure system reliability, and confirm that all functionalities meet user requirements. Finally, it covers the deployment process, describing how the system was prepared for actual use, including installation, configuration, and user accessibility considerations. Throughout the chapter, challenges encountered during each stage are explained along with the solutions applied, providing insight into the practical aspects of system implementation.</p>
+
+<h2>User Interface Development</h2>
+
+<h3>Login Page Development</h3>
+<p>The login form allows users to securely access the Network Usage Monitoring System by entering a valid username and password. It captures input data, validates user credentials, and authenticates access. Upon successful login, users are granted entry to the system, while incorrect details prompt error messages, ensuring secure and controlled system access.</p>
+
+<pre>&lt;!-- Login Form (public/index.php) --&gt;
+&lt;form action="index.php" method="POST"&gt;
+    &lt;input type="hidden" name="csrf" value="&lt;?= csrf_token() ?&gt;"&gt;
+    &lt;div class="mb-3"&gt;
+        &lt;label class="form-label small text-muted mb-1"&gt;Username&lt;/label&gt;
+        &lt;div class="input-group"&gt;
+            &lt;span class="input-group-text bg-light border-end-0"&gt;&lt;i class="fa fa-user text-muted"&gt;&lt;/i&gt;&lt;/span&gt;
+            &lt;input type="text" name="username" class="form-control border-start-0 bg-light" placeholder="Enter username" required autofocus&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="mb-4"&gt;
+        &lt;label class="form-label small text-muted mb-1"&gt;Password&lt;/label&gt;
+        &lt;div class="input-group"&gt;
+            &lt;span class="input-group-text bg-light border-end-0"&gt;&lt;i class="fa fa-lock text-muted"&gt;&lt;/i&gt;&lt;/span&gt;
+            &lt;input type="password" name="password" class="form-control border-start-0 bg-light" placeholder="Enter password" required&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="d-grid"&gt;
+        &lt;button type="submit" class="btn btn-primary py-2 fw-semibold"&gt;Sign In&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</pre>
+
+<pre>&lt;style&gt;
+body {
+    background: #f0f2f5;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+.login-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+&lt;/style&gt;</pre>
+<div class="caption">Figure 3.2.1 login page development</div>
+
+<h3>Dashboard</h3>
+<p>This dashboard provides a clear overview of network performance, showing total devices, threshold alerts, and daily traffic. It also highlights recent additions and offers quick navigation, making network tracking and management efficient and user-friendly.</p>
+
+<pre>&lt;!-- dashboard heading and stats --&gt;
+&lt;div class="row mb-5"&gt;
+    &lt;div class="col-md-8"&gt;
+        &lt;h1 class="fw-bold text-dark"&gt;Dashboard Overview&lt;/h1&gt;
+        &lt;p class="text-muted"&gt;Welcome to the internal network usage monitoring system.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-4 text-md-end"&gt;
+        &lt;a href="devices.php#add-device-card" class="btn btn-primary px-4"&gt;&lt;i class="fa fa-plus me-2"&gt;&lt;/i&gt;Add Device&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="row g-4 mb-5"&gt;
+    &lt;!-- Total Devices Card --&gt;
+    &lt;div class="col-6 col-md-4"&gt;
+        &lt;div class="card border-0 shadow-sm h-100"&gt;
+            &lt;div class="card-body p-3 text-center"&gt;
+                &lt;div class="mb-2 text-primary opacity-75"&gt;&lt;i class="fa fa-server fa-2x"&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;h6 class="text-muted text-uppercase mb-1 text-primary" style="font-size: 0.7rem; letter-spacing: 0.5px;"&gt;Total Inventory&lt;/h6&gt;
+                &lt;h3 class="fw-bold mb-0 text-dark"&gt;&lt;?= $stats['devices'] ?&gt;&lt;/h3&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- Alert Card --&gt;
+    &lt;div class="col-6 col-md-4"&gt;
+        &lt;div class="card border-0 shadow-sm h-100"&gt;
+            &lt;div class="card-body p-3 text-center"&gt;
+                &lt;div class="mb-2 &lt;?= $stats['alerts'] &gt; 0 ? 'text-danger' : 'text-success' ?&gt; opacity-75"&gt;
+                    &lt;i class="fa fa-exclamation-triangle fa-2x"&gt;&lt;/i&gt;
+                &lt;/div&gt;
+                &lt;h6 class="text-muted text-uppercase mb-1" style="font-size: 0.7rem; letter-spacing: 0.5px;"&gt;Threshold Alerts&lt;/h6&gt;
+                &lt;h3 class="fw-bold mb-0 &lt;?= $stats['alerts'] &gt; 0 ? 'text-danger' : 'text-success' ?&gt;"&gt;&lt;?= $stats['alerts'] ?&gt;&lt;/h3&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- Today's Traffic Card --&gt;
+    &lt;div class="col-12 col-md-4"&gt;
+        &lt;div class="card border-0 shadow-sm h-100"&gt;
+            &lt;div class="card-body p-3 text-center"&gt;
+                &lt;div class="mb-2 text-success opacity-75"&gt;&lt;i class="fa fa-bar-chart fa-2x"&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;h6 class="text-muted text-uppercase mb-1" style="font-size: 0.7rem; letter-spacing: 0.5px;"&gt;Today's Traffic&lt;/h6&gt;
+                &lt;h3 class="fw-bold mb-0 text-success"&gt;&lt;?= number_format($stats['today_mb'], 1) ?&gt; MB&lt;/h3&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+<div class="caption">Figure 3.2.2 dashboard development</div>
+
+<h3>Navigation bar</h3>
+<p>This navigation bar provides quick access to key sections like Books/Devices, Inventory, Sales/Metric Logs, and Reports. It also includes a search function and user profile controls, ensuring easy navigation and efficient system interaction.</p>
+
+<pre>&lt;!-- navbar --&gt;
+&lt;nav class="navbar navbar-expand-lg navbar-white bg-white border-bottom sticky-top"&gt;
+    &lt;div class="container-fluid px-4"&gt;
+        &lt;a class="navbar-brand fw-bold d-flex align-items-center" href="dashboard.php" style="font-size: 1.75rem;"&gt;
+            &lt;span class="brand-badge me-2"&gt;&lt;i class="fa fa-wifi text-primary"&gt;&lt;/i&gt;&lt;/span&gt;
+            &lt;span class="text-dark"&gt;Net-&lt;/span&gt;&lt;span class="text-primary"&gt;Portal&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;div class="collapse navbar-collapse" id="navbarContent"&gt;
+            &lt;ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-semibold ms-4"&gt;
+                &lt;li class="nav-item"&gt;&lt;a class="nav-link text-primary active" href="dashboard.php"&gt;Dashboard&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="devices.php"&gt;Inventory&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="metrics.php"&gt;Metric Logs&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="reports.php"&gt;Reports&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;form class="d-flex ms-3" action="devices.php" method="GET" style="min-width: 350px;"&gt;
+                &lt;div class="input-group"&gt;
+                    &lt;input class="form-control bg-light border-secondary border-opacity-25" type="search" name="q" placeholder="Search devices, IP..." required&gt;
+                    &lt;button class="btn btn-primary px-3" type="submit"&gt;&lt;i class="fa fa-search"&gt;&lt;/i&gt;&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/form&gt;
+            &lt;div class="ms-3 d-none d-lg-flex align-items-center"&gt;
+                &lt;span class="text-muted small me-2"&gt;&lt;i class="fa fa-user-circle me-1"&gt;&lt;/i&gt; &lt;?= e(user()['full_name']) ?&gt;&lt;/span&gt;
+                &lt;a href="logout.php" class="btn btn-sm btn-outline-secondary px-3"&gt;Logout&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;</pre>
+<div class="caption">Figure 3.2.3 navigation bar</div>
+
+<h3>Inventory</h3>
+<p>This inventory control center displays detailed device information including limits, operational status, and categories. It allows quick actions like logging, editing, or deleting items, while highlighting threshold alerts to help maintain efficient network management.</p>
+
+<pre>&lt;div class="row"&gt;
+    &lt;div class="col-lg-9 mb-4"&gt;
+        &lt;div class="card shadow-sm border-0"&gt;
+            &lt;table class="table table-hover align-middle mb-0"&gt;
+                &lt;thead class="table-dark"&gt;
+                    &lt;tr&gt;
+                        &lt;th class="ps-3"&gt;Device Info&lt;/th&gt;
+                        &lt;th&gt;IP Address&lt;/th&gt;
+                        &lt;th&gt;Limits (MB)&lt;/th&gt;
+                        &lt;th&gt;Status&lt;/th&gt;
+                        &lt;th&gt;Category&lt;/th&gt;
+                        &lt;th class="text-center"&gt;Action&lt;/th&gt;
+                    &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody&gt;
+                    &lt;!-- Dynamic rows matching template --&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- Threshold / Low Stock Sidebar --&gt;
+    &lt;div class="col-lg-3"&gt;
+        &lt;div class="card shadow-sm border-0 mb-4 position-sticky" style="top: 80px;"&gt;
+            &lt;div class="card-header bg-danger text-white fw-bold"&gt;Threshold Alert&lt;/div&gt;
+            &lt;div class="card-body p-0"&gt;
+                &lt;!-- Dynamic alert list group --&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+<div class="caption">Figure 3.2.4 inventory control center</div>
+
+<h3>Add new device form</h3>
+<p>The Add New Device form is a data-entry interface designed for adding new hardware titles to the inventory database. It uses a clean, grid-based layout to ensure all required metadata is captured quickly.</p>
+
+<pre>&lt;!-- New Device Card (public/devices.php) --&gt;
+&lt;div class="card border mobile-full-width shadow-sm"&gt;
+    &lt;div class="card-header bg-white border-bottom p-3 d-flex justify-content-between align-items-center"&gt;
+        &lt;h5 class="mb-0 fw-bold"&gt;&lt;i class="fa fa-plus-circle me-2 text-primary"&gt;&lt;/i&gt;New Device&lt;/h5&gt;
+        &lt;a href="devices.php" class="btn-close" aria-label="Close"&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="card-body p-3"&gt;
+        &lt;form action="devices.php" method="POST"&gt;
+            &lt;input type="hidden" name="csrf" value="&lt;?= csrf_token() ?&gt;"&gt;
+            &lt;input type="hidden" name="action" value="save"&gt;
+            &lt;div class="mb-2"&gt;
+                &lt;label class="form-label small text-muted mb-1"&gt;Device Name&lt;/label&gt;
+                &lt;input type="text" name="name" class="form-control form-control-sm" placeholder="Enter Full Device Name" required&gt;
+            &lt;/div&gt;
+            &lt;div class="row g-2 mb-2"&gt;
+                &lt;div class="col-6"&gt;
+                    &lt;label class="form-label small text-muted mb-1"&gt;IP Address&lt;/label&gt;
+                    &lt;input type="text" name="ip_address" class="form-control form-control-sm" placeholder="192.168.1.1" required&gt;
+                &lt;/div&gt;
+                &lt;div class="col-6"&gt;
+                    &lt;label class="form-label small text-muted mb-1"&gt;Location&lt;/label&gt;
+                    &lt;input type="text" name="location" class="form-control form-control-sm" placeholder="Server Room" required&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="row g-2 mb-3"&gt;
+                &lt;div class="col-4"&gt;
+                    &lt;label class="form-label small text-muted mb-1"&gt;DL Limit&lt;/label&gt;
+                    &lt;input type="number" name="download_limit_mb" class="form-control form-control-sm" value="5000" required&gt;
+                &lt;/div&gt;
+                &lt;div class="col-4"&gt;
+                    &lt;label class="form-label small text-muted mb-1"&gt;UL Limit&lt;/label&gt;
+                    &lt;input type="number" name="upload_limit_mb" class="form-control form-control-sm" value="2000" required&gt;
+                &lt;/div&gt;
+                &lt;div class="col-4"&gt;
+                    &lt;label class="form-label small text-muted mb-1"&gt;Category&lt;/label&gt;
+                    &lt;select name="device_type" class="form-select form-select-sm"&gt;
+                        &lt;option value="Router"&gt;Router&lt;/option&gt;
+                        &lt;option value="Switch"&gt;Switch&lt;/option&gt;
+                        &lt;option value="Access Point"&gt;Access Point&lt;/option&gt;
+                        &lt;option value="Firewall"&gt;Firewall&lt;/option&gt;
+                    &lt;/select&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="d-grid"&gt;
+                &lt;button type="submit" class="btn btn-primary btn-sm block"&gt;Add Device to Inventory&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+<div class="caption">Figure 3.2.5 add new device</div>
+
+<h3>Sales logs</h3>
+<p>The Real-Time Transaction Logs section provides an automated audit trail of all network metrics and bandwidth changes. It is designed to give administrators an immediate, high-level view of daily operations without needing to generate manual reports.</p>
+
+<pre>&lt;!-- Desktop Table View (public/metrics.php) --&gt;
+&lt;div class="table-responsive"&gt;
+    &lt;table class="table table-hover align-middle mb-0"&gt;
+        &lt;thead class="table-dark"&gt;
+            &lt;tr&gt;
+                &lt;th class="ps-3"&gt;Time&lt;/th&gt;
+                &lt;th&gt;Device Name&lt;/th&gt;
+                &lt;th class="text-center"&gt;Qty (MB)&lt;/th&gt;
+                &lt;th class="text-end pe-3"&gt;Total Bandwidth&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;?php foreach ($metrics as $m): ?&gt;
+                &lt;tr&gt;
+                    &lt;td class="ps-3 text-muted"&gt;
+                        &lt;div class="d-flex flex-column"&gt;
+                            &lt;span class="fw-bold text-dark"&gt;&lt;?= date('H:i', strtotime($m['recorded_at'])) ?&gt;&lt;/span&gt;
+                            &lt;small&gt;&lt;?= date('d/m', strtotime($m['recorded_at'])) ?&gt;&lt;/small&gt;
+                        &lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;&lt;span class="fw-bold"&gt;&lt;?= e($m['device_name']) ?&gt;&lt;/span&gt;&lt;/td&gt;
+                    &lt;td class="text-center"&gt;&lt;?= number_format($m['download_mb'], 2) ?&gt;&lt;/td&gt;
+                    &lt;td class="text-end pe-3 text-success fw-bold"&gt;&lt;?= number_format($m['total_mb'], 2) ?&gt; MB&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;?php endforeach; ?&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</pre>
+<div class="caption">Figure 3.2.6 metric logs</div>
+
+<h3>Reports</h3>
+<p>The Reports Center provides a comprehensive summary of network performance, including bandwidth trends, traffic analysis, and device movement. It helps users generate insights, track progress over time, and make informed decisions through organized and easy-to-read reports.</p>
+
+<pre>&lt;div class="row mb-5"&gt;
+    &lt;div class="col-md-4 mb-4"&gt;
+        &lt;div class="card border-0 shadow h-100"&gt;
+            &lt;div class="card-body py-4 text-center"&gt;
+                &lt;div class="mb-2 text-success opacity-75"&gt;&lt;i class="fa fa-area-chart fa-2x"&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;h6 class="text-muted text-uppercase mb-1" style="font-size: 0.7rem; letter-spacing: 0.5px;"&gt;Total Bandwidth Generated&lt;/h6&gt;
+                &lt;h3 class="fw-bold mb-0 text-success"&gt;&lt;?= number_format($totalBandwidth, 1) ?&gt; MB&lt;/h3&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-8 mb-4"&gt;
+        &lt;div class="card border-0 shadow h-100"&gt;
+            &lt;div class="card-header bg-white border-bottom p-3"&gt;
+                &lt;h5 class="mb-0 fw-bold"&gt;Top Bandwidth Devices&lt;/h5&gt;
+            &lt;/div&gt;
+            &lt;div class="card-body p-0"&gt;
+                &lt;table class="table table-hover align-middle mb-0"&gt;
+                    &lt;thead class="table-light"&gt;
+                        &lt;tr&gt;&lt;th class="ps-4"&gt;Device Name&lt;/th&gt;&lt;th class="text-end pe-4"&gt;Total MB&lt;/th&gt;&lt;/tr&gt;
+                    &lt;/thead&gt;
+                    &lt;tbody&gt;&lt;!-- Dynamic list --&gt;&lt;/tbody&gt;
+                &lt;/table&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="card border-0 shadow mb-5"&gt;
+    &lt;div class="card-header bg-white border-bottom p-3 d-flex justify-content-between align-items-center"&gt;
+        &lt;h5 class="mb-0 fw-bold"&gt;Recent Activity&lt;/h5&gt;
+        &lt;a href="metrics.php" class="btn btn-sm btn-outline-primary px-3"&gt;View Full Logs&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="card-body p-3 text-center"&gt;
+        &lt;p class="text-muted mb-3"&gt;View detailed records of every metric reading including Times, device IDs, and traffic values.&lt;/p&gt;
+        &lt;a href="metrics.php" class="btn btn-primary px-4"&gt;Access Transaction Ledger&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+<div class="caption">Figure 3.2.7 reports</div>
+
+<h2>Logic Development</h2>
+
+<h3>Login</h3>
+<p>The login process uses a standard PHP PDO workflow. It first checks if a user is already authenticated; if so, it redirects them to the dashboard. For new login attempts, the system extracts the username and password from a POST request, searches the database for a matching user, and verifies the password hash. If the credentials are valid, it initializes a session and redirects the user to their intended destination. If authentication fails, it triggers an error message and reloads the login template.</p>
+
+<pre>// authentication function (includes/auth.php)
+function attempt_login(string $username, string $password): bool {
+    $stmt = db()->prepare('SELECT * FROM users WHERE username = ? LIMIT 1');
+    $stmt->execute([$username]);
+    $record = $stmt->fetch();
+    if ($record && password_verify($password, $record['password_hash'])) {
+        session_regenerate_id(true);
+        $_SESSION['user'] = ['id' => $record['id'], 'username' => $record['username'], 'full_name' => $record['full_name'], 'role' => $record['role']];
+        return true;
+    }
+    return false;
+}</pre>
+<div class="caption">Figure 3.3.1 PHP-based user authentication function implemented using PDO</div>
+
+<h3>Dashboard</h3>
+<p>The /logout route requires the user to be logged in, logs them out, shows a success message with session flash, and then redirects them to the login page. The dashboard route also requires login and displays summary statistics: it counts the total number of devices, counts active threshold alerts, calculates today’s total traffic using a database aggregate function (sum of download and upload filtered by today’s date), retrieves the most recently added devices, and passes all this data to the dashboard template for rendering.</p>
+
+<pre>// dashboard metrics (public/dashboard.php)
+$stats = [
+    'devices' => (int)db()->query('SELECT COUNT(*) FROM devices')->fetchColumn(),
+    'online' => (int)db()->query("SELECT COUNT(*) FROM devices WHERE status='online'")->fetchColumn(),
+    'alerts' => (int)db()->query('SELECT COUNT(*) FROM alerts WHERE is_resolved=0')->fetchColumn(),
+    'today_mb' => (float)db()->query('SELECT COALESCE(SUM(download_mb + upload_mb),0) FROM usage_metrics WHERE DATE(recorded_at)=CURDATE()')->fetchColumn()
+];
+$devices = db()->query('SELECT * FROM devices ORDER BY id DESC LIMIT 8')->fetchAll();</pre>
+<div class="caption">Figure 3.3.2 dashboard backend development</div>
+
+<h3>Inventory</h3>
+<p>The /inventory route displays all devices and highlights threshold items. The add route allows logged-in users to create a new device by submitting a form, saving it to the database, and redirecting to the inventory page with a success message. The edit route lets users update an existing device’s details, pre-filling the form and saving changes to the database. The delete route deletes a device (and its related records) from the database. The quick_log route updates traffic, records the metric, and triggers threshold alerts when limits are exceeded. Finally, the search route allows users to search devices by name, IP, or type using a query and displays the matching results.</p>
+
+<pre>// inventory operations (public/devices.php)
+if ($action === 'save') {
+    $id = (int)($_POST['id'] ?? 0);
+    $data = [trim($_POST['name']), trim($_POST['ip_address']), trim($_POST['device_type']), trim($_POST['location']), $_POST['status'], (float)$_POST['download_limit_mb'], (float)$_POST['upload_limit_mb']];
+    if ($id) {
+        $data[] = $id;
+        db()->prepare('UPDATE devices SET name=?, ip_address=?, device_type=?, location=?, status=?, download_limit_mb=?, upload_limit_mb=? WHERE id=?')->execute($data);
+    } else {
+        db()->prepare('INSERT INTO devices (name, ip_address, device_type, location, status, download_limit_mb, upload_limit_mb, last_seen) VALUES (?,?,?,?,?,?,?,NOW())')->execute($data);
+    }
+} elseif ($action === 'delete') {
+    db()->prepare('DELETE FROM devices WHERE id=?')->execute([(int)$_POST['id']]);
+}</pre>
+<div class="caption">Figure 3.3.3 inventory backend development</div>
+
+<h3>Sales logs and reports</h3>
+<p>This PHP code defines two authenticated pages. The transaction logs route retrieves all metric records from the database, ordered by recorded_at in descending order, and passes them to the template for display. The reports route generates summary data: it calculates the total bandwidth by summing usage_metrics, and finds the top best-selling / consuming devices by summing traffic per device, grouping by device id, ordering by total in descending order. These results are then rendered in the reports template.</p>
+
+<pre>// metric and reporting backend (public/reports.php)
+$stmtTotal = db()->prepare('SELECT COALESCE(SUM(download_mb + upload_mb),0) FROM usage_metrics WHERE recorded_at BETWEEN ? AND ?');
+$stmtTotal->execute([$from.' 00:00:00', $to.' 23:59:59']);
+$totalBandwidth = (float)$stmtTotal->fetchColumn();
+
+$stmtTop = db()->prepare('SELECT d.name, SUM(m.download_mb + m.upload_mb) AS total_mb 
+    FROM usage_metrics m JOIN devices d ON d.id=m.device_id 
+    WHERE m.recorded_at BETWEEN ? AND ? GROUP BY d.id ORDER BY total_mb DESC LIMIT 5');
+$stmtTop->execute([$from.' 00:00:00', $to.' 23:59:59']);
+$topDevices = $stmtTop->fetchAll();</pre>
+<div class="caption">Figure 3.3.4 sales backend development</div>
+
+<h2>Testing</h2>
+<p><strong>User Login Feature</strong><br>
+Testing Action: I attempted to log in using both valid and invalid credentials to verify whether access was granted correctly and error messages were displayed.<br>
+Result: The system allowed correct login but initially did not show an error for incorrect credentials.<br>
+Correction: I updated the login validation code to display an appropriate error message when credentials are invalid.</p>
+
+<p><strong>Inventory Entry Form</strong><br>
+Testing Action: I added sample products to the inventory to check if the details were correctly saved to the database.<br>
+Result: Correctly saved.</p>
+
+<p><strong>Sales Log Recording</strong><br>
+Testing Action: I recorded sample metric transactions to verify that the system updated inventory quantities and calculated totals correctly.<br>
+Result: The system initially did not evaluate threshold alerts after a metric record.<br>
+Correction: I fixed the threshold evaluation logic so that alerts automatically trigger when limit is exceeded.</p>
+
+<p><strong>Report Generation</strong><br>
+Testing Action: I generated inventory and bandwidth reports for different dates to check the accuracy of totals and summaries.<br>
+Result: Some entries were missing due to incorrect date filtering.<br>
+Correction: I corrected the filtering logic, and all relevant data now appears in the reports.</p>
+
+<p><strong>System Navigation and Buttons</strong><br>
+Testing Action: I navigated through all menus and clicked buttons to verify that each directed to the correct page or performed the intended action.<br>
+Result: Worked perfectly.</p>
+
+<h2>Deployment</h2>
+<p>The Network Usage Monitoring System has been successfully deployed on XAMPP and Apache web server, providing a reliable and accessible web-based platform for managing network inventory. Apache offers a local and intranet hosting environment, which ensures the application runs continuously without dependency on external public cloud servers. The deployment process involved placing the project in the htdocs root, configuring the MySQL database with required tables, and setting up the web app with the correct configuration parameters. This deployment enables users to access the system from any device with network connectivity, ensuring real-time inventory tracking, seamless data management, and efficient operational workflows, all hosted securely in the network.<br>
+Access the live system here: <strong>Network Usage Monitoring System (NetUsage Hub)</strong></p>
+
+<div class="page-break"></div>
+
+<!-- CHAPTER FOUR -->
+<h1>CHAPTER FOUR: CONCLUSION AND RECOMMENDATION</h1>
+
+<h2>Conclusion</h2>
+<p>The aim of this project was to develop a Network Usage Monitoring System that improves the efficiency of managing network operations. Chapter One discussed the problem statement, justification of the study, and the objectives of the system. It highlighted the challenges faced by network hubs that rely on manual record keeping such as bandwidth inaccuracies and difficulty in tracking device performance. Chapter Two focused on the design and modelling of the system using diagrams such as the Data Flow Diagram, Entity Relationship Diagram, Use Case Diagram, and Class Diagram to illustrate how the system operates. Chapter Three described the implementation of the system including the development of the user interface, logic implementation using the PHP and MySQL framework, system testing, and deployment.</p>
+<p>The developed system successfully automates important network operations including device inventory management, metric logging, and report generation. The system helps the network administrator track bandwidth levels, record transactions, and generate reports for better decision making. During the development of this project, I gained new knowledge in web development using PHP, database management using MySQL, and system deployment using local server platforms. However, some challenges were encountered such as debugging code errors and ensuring proper integration between the front-end and back-end components. These challenges helped improve my problem-solving and programming skills.</p>
+
+<h2>Recommendation</h2>
+<p>Although the Network Usage Monitoring System functions effectively, there are several improvements that future developers can implement to enhance its capabilities. One improvement would be integrating automated SNMP device polling so that network metrics can be gathered automatically instead of relying on manual entry.</p>
+<p>Another improvement would be the integration of SMS and email notification technology. This would allow critical threshold alerts to be dispatched immediately to technicians' mobile phones, thereby improving response time and reducing network downtime.</p>
+<p>Future developers may also consider upgrading the system database to a distributed cluster to support larger amounts of telemetry data and multiple concurrent users. Additionally, the system can be enhanced by implementing advanced analytics and graphical reports that provide deeper insights into traffic patterns and network performance.</p>
+
+<div class="page-break"></div>
+
+<!-- REFERENCES -->
+<h1>REFERENCES</h1>
+<p>Djohan, T., & Stefvy. (2023, April). “Inventory Shortages and Poor Management Systems Negatively Affect Customer Satisfaction in the Retail and Infrastructure Industry”. <em>Research Synergy Press Journals</em>. https://www.researchgate.net/publication/371763839</p>
+<p>International Telecommunication Union (ITU). (2023). <em>Measuring digital development: Facts and figures 2023</em>. https://www.itu.int/en/Pages/default.aspx</p>
+<p>Laudon, K. C., & Laudon, J. P. (2022). <em>Management information systems: Managing the digital firm</em> (17th ed.). Pearson Education.</p>
+<p>Mhlongo, N. et al. (2024, February 6). “Reviewing the impact of cloud computing on small and medium enterprises in Africa”. <em>International journal of science and research Archive</em>. https://ijsra.net/sites/default/files/IJSRA-2024-0236.pdf?utm</p>
+<p>Rashid et al. (2025, July 18). “A Review of Technological Advancements and Operational Improvements in IoT for Retail Inventory Management”. <em>IJRISS</em>. https://rsisinternational.org/journals/ijriss/articles/a-review-of-technological-advancements-and-operational-improvements-in-iot-for-retail-inventory-management/</p>
+
+</body>
+</html>
