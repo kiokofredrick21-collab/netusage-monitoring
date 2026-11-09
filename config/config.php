@@ -1,10 +1,21 @@
 <?php
-// Copy this file's database values to match your XAMPP/MySQL setup.
-const DB_HOST = '127.0.0.1';
-const DB_NAME = 'netusage_hub';
-const DB_USER = 'root';
-const DB_PASS = '';
-const APP_NAME = 'NetUsage Hub';
+// Detect local environment (XAMPP localhost) vs production
+$isLocal = in_array($_SERVER['SERVER_NAME'] ?? 'localhost', ['localhost', '127.0.0.1', '::1'])
+    || (php_sapi_name() === 'cli' && empty(getenv('DB_HOST')));
+
+if ($isLocal && empty(getenv('DB_HOST'))) {
+    define('DB_HOST', 'localhost');
+    define('DB_NAME', 'netusage_hub');
+    define('DB_USER', 'root');
+    define('DB_PASS', '');
+} else {
+    define('DB_HOST', getenv('DB_HOST') ?: 'sql313.infinityfree.com');
+    define('DB_NAME', getenv('DB_NAME') ?: 'if0_43395558_netusage');
+    define('DB_USER', getenv('DB_USER') ?: 'if0_43395558');
+    define('DB_PASS', getenv('DB_PASS') ?: 'IGATHufN3ISWG');
+}
+
+define('APP_NAME', 'NetUsage Hub');
 
 date_default_timezone_set('Africa/Nairobi');
 
