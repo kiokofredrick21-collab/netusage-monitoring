@@ -90,3 +90,12 @@ try {
 </nav>
 
 <main class="container-fluid px-4 py-4 flex-grow-1">
+<?php if (!empty($_SESSION['user']['demo_mode'])): ?>
+    <div class="alert alert-info alert-dismissible fade show border-0 shadow-sm py-2 px-3 small d-flex align-items-center mb-4" role="alert">
+        <i class="fa fa-info-circle fs-5 me-2 text-primary"></i>
+        <div>
+            <strong>Demo Mode:</strong> Displaying sample infrastructure data. To connect a live persistent database, add your cloud MySQL credentials (<code>DB_HOST</code>, <code>DB_NAME</code>, <code>DB_USER</code>, <code>DB_PASS</code>) in your Vercel project settings.
+        </div>
+        <button type="button" class="btn-close btn-sm p-2" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>

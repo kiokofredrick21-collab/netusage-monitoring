@@ -34,6 +34,28 @@ try {
         LIMIT 5')->fetchAll();
 } catch (Throwable $e) {}
 
+// Fallback sample data when database is offline/unreachable on serverless
+if (empty($devices)) {
+    $stats = [
+        'devices' => 6,
+        'online' => 5,
+        'alerts' => 2,
+        'today_mb' => 7420.5
+    ];
+    $devices = [
+        ['id' => 1, 'name' => 'Cisco Core Router 2901', 'ip_address' => '192.168.1.1', 'device_type' => 'Router', 'location' => 'Main Server Room', 'status' => 'online', 'usage_mb' => 2180.4, 'download_limit_mb' => 5000, 'upload_limit_mb' => 2000],
+        ['id' => 2, 'name' => 'Catalyst 3750 Switch', 'ip_address' => '192.168.1.2', 'device_type' => 'Switch', 'location' => 'Data Center Rack B', 'status' => 'online', 'usage_mb' => 1450.0, 'download_limit_mb' => 8000, 'upload_limit_mb' => 4000],
+        ['id' => 3, 'name' => 'MikroTik CCR1009 Gateway', 'ip_address' => '192.168.1.254', 'device_type' => 'Router', 'location' => 'Kisii Edge Gateway', 'status' => 'online', 'usage_mb' => 3210.8, 'download_limit_mb' => 10000, 'upload_limit_mb' => 5000],
+        ['id' => 4, 'name' => 'UniFi AP Pro (Admin)', 'ip_address' => '192.168.1.10', 'device_type' => 'Access Point', 'location' => 'Admin Wing Level 1', 'status' => 'online', 'usage_mb' => 890.3, 'download_limit_mb' => 2500, 'upload_limit_mb' => 1000],
+        ['id' => 5, 'name' => 'UniFi AP AC (Library)', 'ip_address' => '192.168.1.11', 'device_type' => 'Access Point', 'location' => 'Campus Library Block', 'status' => 'offline', 'usage_mb' => 42.0, 'download_limit_mb' => 2500, 'upload_limit_mb' => 1000],
+        ['id' => 6, 'name' => 'FortiGate 60F Firewall', 'ip_address' => '192.168.1.250', 'device_type' => 'Firewall', 'location' => 'Security Operations Room', 'status' => 'online', 'usage_mb' => 1890.2, 'download_limit_mb' => 12000, 'upload_limit_mb' => 6000]
+    ];
+    $alerts = [
+        ['id' => 1, 'device_id' => 1, 'device_name' => 'Cisco Core Router 2901', 'ip_address' => '192.168.1.1', 'message' => 'Core Router exceeded threshold capacity', 'severity' => 'critical', 'created_at' => date('Y-m-d H:i:s', strtotime('-15 minutes'))],
+        ['id' => 2, 'device_id' => 5, 'device_name' => 'UniFi AP AC (Library)', 'ip_address' => '192.168.1.11', 'message' => 'UniFi AP AC (Library) unreachable / offline', 'severity' => 'warning', 'created_at' => date('Y-m-d H:i:s', strtotime('-1 hour'))]
+    ];
+}
+
 $title = 'Dashboard Overview';
 require __DIR__ . '/includes/header.php';
 ?>
