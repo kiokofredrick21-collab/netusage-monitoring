@@ -1,21 +1,21 @@
-# Exclude legacy XAMPP-layout files (Vercel uses api/ and public/ instead)
-config/
-includes/
-database/
+# Exclude legacy root files only (with leading slash)
+/config/
+/includes/
+/database/
 make_docx.ps1
 make_milestone_3_4_docx.ps1
 MILESTONE_3_AND_4_DOCUMENTATION.md
 SYSTEM_DOCUMENTATION.md
 REQUIREMENTS_ANALYSIS.md
-public/SYSTEM_DOCUMENTATION.doc
-public/NETWORK_USAGE_MONITORING_SYSTEM_DOCUMENTATION.docx
-public/documentation.html
-public/index.php
-public/dashboard.php
-public/devices.php
-public/metrics.php
-public/alerts.php
-public/reports.php
-public/setup.php
-public/logout.php
-public/api/
+/public/SYSTEM_DOCUMENTATION.doc
+/public/NETWORK_USAGE_MONITORING_SYSTEM_DOCUMENTATION.docx
+/public/documentation.html
+/public/index.php
+/public/dashboard.php
+/public/devices.php
+/public/metrics.php
+/public/alerts.php
+/public/reports.php
+/public/setup.php
+/public/logout.php
+/public/api/
