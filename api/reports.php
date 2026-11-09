@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once __DIR__ . '/includes/auth.php';
 
 $from = $_GET['from'] ?? date('Y-m-01');

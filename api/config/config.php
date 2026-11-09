@@ -1,4 +1,8 @@
 <?php
+if (!ob_get_level()) {
+    ob_start();
+}
+
 // Database credentials — read from environment variables (set in Vercel dashboard)
 // Falls back to hardcoded InfinityFree values for local/XAMPP use.
 define('DB_HOST', getenv('DB_HOST') ?: 'sql313.infinityfree.com');
@@ -10,8 +14,10 @@ define('APP_NAME', 'NetUsage Hub');
 date_default_timezone_set('Africa/Nairobi');
 
 // Session: use cookies; Vercel serverless has an ephemeral /tmp filesystem
-ini_set('session.save_path', sys_get_temp_dir());
-if (session_status() === PHP_SESSION_NONE) {
+if (session_status() === PHP_SESSION_NONE && !headers_sent()) {
+    if (is_dir(sys_get_temp_dir()) && is_writable(sys_get_temp_dir())) {
+        @ini_set('session.save_path', sys_get_temp_dir());
+    }
     session_start();
 }
 
@@ -33,6 +39,9 @@ function e(?string $value): string {
 }
 
 function redirect(string $path): never {
+    if (ob_get_level()) {
+        ob_end_clean();
+    }
     header('Location: /' . ltrim($path, '/'));
     exit;
 }
