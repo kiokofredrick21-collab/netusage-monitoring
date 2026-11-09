@@ -1,0 +1,23 @@
+{
+  "functions": {
+    "api/*.php": {
+      "runtime": "vercel-php@0.7.3"
+    }
+  },
+  "routes": [
+    {
+      "src": "/assets/(.*)",
+      "dest": "/public/assets/$1"
+    },
+    { "src": "^/$",                  "dest": "/api/index.php" },
+    { "src": "^/index\\.php$",       "dest": "/api/index.php" },
+    { "src": "^/dashboard\\.php$",   "dest": "/api/dashboard.php" },
+    { "src": "^/devices\\.php$",     "dest": "/api/devices.php" },
+    { "src": "^/metrics\\.php$",     "dest": "/api/metrics.php" },
+    { "src": "^/alerts\\.php$",      "dest": "/api/alerts.php" },
+    { "src": "^/reports\\.php$",     "dest": "/api/reports.php" },
+    { "src": "^/setup\\.php$",       "dest": "/api/setup.php" },
+    { "src": "^/logout\\.php$",      "dest": "/api/logout.php" },
+    { "src": "^/record_metric\\.php$","dest": "/api/record_metric.php" }
+  ]
+}
