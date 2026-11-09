@@ -7,14 +7,18 @@ if (user()) {
 
 $error = null;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    verify_csrf();
-    $username = trim($_POST['username'] ?? '');
-    $password = $_POST['password'] ?? '';
-    
-    if (attempt_login($username, $password)) {
-        redirect('dashboard.php');
+    try {
+        verify_csrf();
+        $username = trim($_POST['username'] ?? '');
+        $password = $_POST['password'] ?? '';
+        
+        if (attempt_login($username, $password)) {
+            redirect('dashboard.php');
+        }
+        $error = 'Invalid username or password.';
+    } catch (Throwable $e) {
+        $error = $e->getMessage();
     }
-    $error = 'Invalid username or password.';
 }
 ?>
 <!doctype html>
